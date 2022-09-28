@@ -1,7 +1,7 @@
 import os, os.path
 import pandas as pd
-path = r'/Users/martinweiss/Documents/Python/Random Python Scripts/Spotify/MyData/Streaming History'
-outputPath = r'/Users/martinweiss/Documents/Python/Random Python Scripts/Spotify/MyData/Streaming History'
+path = r'/Users/martinweiss/Documents/Python/Random Python Scripts/Spotify/Streaming History'
+outputPath = r'/Users/martinweiss/Documents/Python/Random Python Scripts/Spotify/Streaming History'
 fileCount = (len([entry for entry in os.listdir(path) if os.path.isfile(os.path.join(path, entry))]))
 data = []
 countList = []
@@ -18,8 +18,8 @@ for file in files:
 sortedList = countList.sort()
 list_2022 = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 		
-for list in countList:
-	df = pd.read_json(r'/Users/martinweiss/Documents/Python/Random Python Scripts/Spotify/MyData/Streaming History/StreamingHistory' + str(list) + '.json')
+for json in countList:
+	df = pd.read_json(r'/Users/martinweiss/Documents/Python/Random Python Scripts/Spotify/Streaming History/StreamingHistory' + str(json) + '.json')
 	data.append(df)
 
 data = pd.concat(data)
